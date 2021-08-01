@@ -8,8 +8,8 @@ const Cta = ({ callToAction }) => {
       <a
         className={
           isPrimary
-            ? "bg-white text-primary-dark border-2 border-white px-6 py-4 font-bold uppercase text-sm"
-            : " text-white border-2 px-6 py-4 border-white font-bold uppercase text-sm"
+            ? "bg-white text-primary-dark border-2 border-white px-6 py-2 font-bold uppercase text-sm"
+            : " text-white border-2 px-6 py-2 border-white font-bold uppercase text-sm"
         }
       >{`${name}`}</a>
     </Link>

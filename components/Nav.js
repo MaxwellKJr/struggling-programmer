@@ -12,9 +12,9 @@ const links = [
 const Nav = () => {
   return (
     <nav className="w-full bg-primary-dark bg-opacity-90 text-white flex flex-col md:flex-row items-center fixed z-50">
-      <div className="container mx-auto w-full flex flex-row justify-between items-center px-8 md:px-2">
+      <div className="container max-w-screen-lg mx-auto w-full flex flex-row justify-between items-center px-8 md:px-4">
         <Link href="/">
-          <a className="logo font-bold text-2xl py-4">SP</a>
+          <a className="logo font-bold text-2xl text-primary-yellow py-4">SP</a>
         </Link>
         <ul className="main-nav grid grid-cols-4 gap-4 justify-center items-center">
           {links &&

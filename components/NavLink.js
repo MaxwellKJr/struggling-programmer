@@ -8,8 +8,7 @@ const NavLink = ({ link }) => {
       <Link href={`/${slug}`}>
         <a
           title={`${title}`}
-          activeClassName="bg-red-300"
-          className="uppercase text-sm py-4 mx-0 hover:text-primary-dark"
+          className="uppercase text-xs py-4 mx-0 hover:text-primary-yellow"
         >
           {name}
         </a>
