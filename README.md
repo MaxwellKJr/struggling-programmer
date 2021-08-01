@@ -6,7 +6,7 @@ The plan is to help new and aspiring developers that the struggle is real and it
 
 As much as we go to Stack Overflow to seek help with our code, this website will be a place to seek help for our minds.
 
-## Built with the following:
+## Built with:
 
 - ReactJS
 - NextJS
