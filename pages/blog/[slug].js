@@ -1,5 +1,6 @@
 import React from "react";
 import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 
 const client = createClient({
@@ -32,15 +33,16 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: { blog: items[0] },
+    revalidate: 1,
   };
 };
 
 const BlogPost = ({ blog }) => {
-  console.log(blog);
-  const { title, slug, thumbnail, author, tags, postedOn } = blog.fields;
+  const { title, thumbnail, body, author, postedOn } = blog.fields;
+
   return (
-    <section className="py-8">
-      <div className="container mx-auto w-1/2">
+    <article className="py-8">
+      <div className="container mx-auto w-full lg:w-1/2">
         <Image
           src={`https:${thumbnail.fields.file.url}`}
           width={thumbnail.fields.file.details.image.width}
@@ -53,7 +55,7 @@ const BlogPost = ({ blog }) => {
           <h2 className="text-4xl">{title}</h2>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

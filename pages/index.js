@@ -20,7 +20,6 @@ export async function getStaticProps() {
 }
 
 const Home = ({ posts }) => {
-  console.log(posts);
   return (
     <div className="">
       <Head>
