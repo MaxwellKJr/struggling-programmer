@@ -34,7 +34,6 @@ const Home = ({ posts }) => {
       </Head>
       <main>
         <HeroSection />
-        <TopPosts posts={posts} />
       </main>
     </div>
   );
