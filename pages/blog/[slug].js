@@ -41,8 +41,9 @@ const BlogPost = ({ blog }) => {
   const { title, thumbnail, body, author, postedOn } = blog.fields;
 
   return (
-    <article className="py-8">
-      <div className="container mx-auto w-full lg:w-1/2">
+    <article className="py-8 pt-28">
+      <div className="container px-8 mx-auto w-full md:w-4/5 lg:w-1/2 max-w-screen-lg">
+        <h2 className="text-4xl mb-8">{title}</h2>
         <Image
           src={`https:${thumbnail.fields.file.url}`}
           width={thumbnail.fields.file.details.image.width}
@@ -52,7 +53,8 @@ const BlogPost = ({ blog }) => {
           placeholder="blur"
         />
         <div>
-          <h2 className="text-4xl">{title}</h2>
+          <h3 className="text-xl my-4">{`Author: ${author}`}</h3>
+          <div className="text-xl">{documentToReactComponents(body)}</div>
         </div>
       </div>
     </article>
