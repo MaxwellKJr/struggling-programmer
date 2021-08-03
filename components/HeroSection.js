@@ -9,7 +9,7 @@ const HeroSection = () => {
 
   return (
     <section className="flex flex-col w-full mx-auto pt-10 text-white bg-hero-section sm:bg-no-repeat bg-cover bg-center h-screen">
-      <div className="container max-w-screen-lg mx-auto w-full flex flex-col h-full items-left justify-center px-4 md:px-0">
+      <div className="container max-w-screen-lg mx-auto w-full flex flex-col h-full items-left justify-center px-4 lg:px-0">
         <div className="hero-content">
           <h1 className="font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
             Be <span className="text-primary-yellow">Encouraged.</span> <br />{" "}

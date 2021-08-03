@@ -1,8 +1,26 @@
 import Head from "next/head";
+import { createClient } from "contentful";
 import HeroSection from "../components/HeroSection";
 import TopPosts from "../components/TopPosts";
 
-const Home = () => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "blogPost" });
+
+  return {
+    props: {
+      posts: res.items,
+    },
+    revalidate: 1,
+  };
+}
+
+const Home = ({ posts }) => {
+  console.log(posts);
   return (
     <div className="">
       <Head>
@@ -17,7 +35,7 @@ const Home = () => {
       </Head>
       <main>
         <HeroSection />
-        <TopPosts />
+        <TopPosts posts={posts} />
       </main>
     </div>
   );
